@@ -1,0 +1,38 @@
+1. Variables, conditionals and debugging techniques
+
+sigils = $ @ @@
+
+Scope: Local, instance, global, class
+
+class Person
+    def initialize(name)
+    @name = name
+    end
+
+    def greet
+        puts "Hello, my name is #{@name}"
+    end
+end
+
+p = Person.new("Giovanna")
+p.greet
+
+---------------------------------------------------
+
+class Calculator
+    @@count = 0 #variavel disponivel na classe
+
+    def initialize
+        @@count += 1
+    end
+
+    def self.count
+        puts "Value: #{@@count}"
+    end
+end
+
+Calculator.new #inicia com 0 e soma com 1 a cada vez chamada
+Calculator.count
+
+---------------------------------------------------
+shadowing
