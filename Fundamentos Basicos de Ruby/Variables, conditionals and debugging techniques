@@ -57,7 +57,7 @@ end
 counter = Counter.new
 counter.increase
 counter.show_count
-puts "Trying to acess local vriable: #{counter.count}" #Will it work?
+puts "Trying to acess local variable: #{counter.count}" #Will it work?
 ---------------------------------------------------
 class Animal
     @@total_animals = 0
