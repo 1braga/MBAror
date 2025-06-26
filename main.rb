@@ -28,6 +28,6 @@ class Cat
     end
 end
 
-# kitty = Cat.new
-# kitty.meow
+kitty = Cat.new
+kitty.meow
 Cat.meow
