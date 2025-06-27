@@ -1,33 +1,26 @@
-# class Dog
-#     def nothing
-#
-#     end
-#
-#     def bark
-#         puts "Woff!"
-#     end
-#
-#     def self.sit
-#         puts "I'm sitting!"
-#     end
-# end
-#
-# mydog = Dog.new
-# mydog.bark
-# Dog.sit
+# yield
 
-class Cat
-    puts "In class, self is #{self}"
-
-    def meow
-        puts "In an instance method, self is #{self}"
-    end
-
-    def self.meow
-        puts "In an class method, self is #{self}"
-    end
+def bark
+    puts "Starting line: #{__LINE__}"
+    yield if block_given?
+    puts "Ending - line: #{__LINE__}"
 end
 
-kitty = Cat.new
-kitty.meow
-Cat.meow
+def meow
+    puts "Beginning: line #{__LINE__}"
+    yield("Little yellow")
+    yield("Little white")
+    puts "Ending: line #{__LINE__}"
+end
+
+#meow { |name| puts "Name: #{name} - line #{__LINE__}" }
+
+def say_hello
+    yield("first yield")
+    yield("second yield")
+    yield("third yield")
+end
+
+say_hello do |n|
+    puts "hello from the #{n}"
+end
